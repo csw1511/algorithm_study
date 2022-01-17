@@ -1,4 +1,3 @@
-import random
+tmp = list(map(int,input()))
 
-for i in range(50):
-    print(random.randrange(20,1,-1))
+print(tmp)
