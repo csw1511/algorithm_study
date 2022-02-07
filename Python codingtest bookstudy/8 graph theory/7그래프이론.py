@@ -346,6 +346,7 @@ def topology_sort():
         print(i, end=' ')
 
 topology_sort()
+print(indegree)
 
 """
 입력값
