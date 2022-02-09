@@ -1,3 +1,3 @@
-tmp = list(map(int,input()))
+count = 12345
 
-print(tmp)
+print(len(str(count)))
