@@ -1,5 +1,5 @@
 def solution(key, lock):
-    answer = True
+    answer = False
     def rclock90(key):
         key90=[]
         for i in key:
@@ -25,7 +25,8 @@ def solution(key, lock):
                     for b in range(j):
                         tmplock[a][b] += key[a][b]
                 if tmplock == [[1,1,1],[1,1,1],[1,1,1]]:
-                    return tmplock
+                    answer = True
+                    return True
         rclock90(key)
             
 
