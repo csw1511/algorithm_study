@@ -37,6 +37,8 @@ for i in range(n):
             dfs(visited,i,j)
             count += 1
 
+for i in visited:
+    print(i)
 
 print(count)
 
