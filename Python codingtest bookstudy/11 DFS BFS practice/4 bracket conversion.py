@@ -1,33 +1,46 @@
+
 n = input()
 
 
 
 def solution(p):
     result = []
-    #if iscorrect(p):
-    #    return p
+    string = ''.join(makeresult(p, result))
+    return string
+
+def makeresult(p, result):
+    if p == []:
+        return result
 
     u, v = slicebracket(p)
-    print(u)
-    print(v)
 
-    while iscorrect(u):
+    if iscorrect(u):
         for i in u:
             result.append(i)
-        u, v = slicebracket(u)
-        print(u)
-        print(v)
-    
-    u.insert(0, '(')
+        
+        return makeresult(v, result)
+    else:
+        resultt =['(']
+        tmpv = makeresult(v, [])
+        for i in tmpv:
+            resultt.append(i)
+        resultt.append(')')
 
-
-    
-
+        for i in range(1, len(u)-1):
+            if u[i] == ')':
+                resultt.append('(')
+            elif u[i] == '(':
+                resultt.append(')')
+        
+        result.extend(resultt)
+        return result
 
 #u와 v 생성기
 def slicebracket(w):
+    if w ==[]:
+        return w, w
     wlist = []
-
+ 
     for i in w:
         wlist.append(i)
     
@@ -80,4 +93,6 @@ def iscorrect(strr):
     else:
         return True
 
+#u, v = slicebracket(n)
+#print(slicebracket(v))
 print(solution(n))
